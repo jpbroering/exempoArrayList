@@ -43,7 +43,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return  "\n Id=" + id + "\n Nome=" + nome + "\n Idade=" + idade;
+        return  "\n Id: " + id + "\n Nome: " + nome + "\n Idade: " + idade;
     }
     
 }

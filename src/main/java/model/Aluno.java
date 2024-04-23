@@ -35,7 +35,7 @@ public class Aluno extends Pessoa {
     public String toString() {
     return super.toString()
     + "\n Curso: " + this.getCurso()
-    + "\n Fase:" + this.getFase()
+    + "\n Fase: " + this.getFase()
     + "\n -----------";
     }
 }
