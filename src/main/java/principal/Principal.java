@@ -30,34 +30,51 @@ public class Principal {
                     System.out.println("Aluno inserido");
                     break;
                 case 2:
-                    int idAConsulta =  Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser consultado"));
+                    int idAConsulta = Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser consultado"));
                     int posicaoConsulta = -1;
-                    for(int i = 0; i<listasimples.size();i++){
-                        if(listasimples.get(i).getId() == idAConsulta){
+                    for (int i = 0; i < listasimples.size(); i++) {
+                        if (listasimples.get(i).getId() == idAConsulta) {
                             posicaoConsulta = i;
                         }
                     }
-                    if(posicaoConsulta != -1){
-                            System.out.println(listasimples.get(posicaoConsulta).toString());
-                    }
-                    else{
+                    if (posicaoConsulta != -1) {
+                        System.out.println(listasimples.get(posicaoConsulta).toString());
+                    } else {
                         System.out.println("Id de Aluno não encontrado");
                     }
                     break;
                 case 3:
+                    int idAtualizar = Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser consultado"));
+                    int posicaoAtualizar = -1;
+                    for (int i = 0; i < listasimples.size(); i++) {
+                        if (listasimples.get(i).getId() == idAtualizar) {
+                            posicaoAtualizar = i;
+                        }
+                    }
+                    if (posicaoAtualizar != -1) {
+                        Aluno novoAtualizado = new Aluno();
+                        novoAtualizado.setId(Integer.parseInt(JOptionPane.showInputDialog("Digite o id do aluno")));
+                        novoAtualizado.setNome(JOptionPane.showInputDialog("Digite o nome do aluno"));
+                        novoAtualizado.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Digite o idade do aluno")));
+                        novoAtualizado.setCurso(JOptionPane.showInputDialog("Digite o curso do aluno"));
+                        novoAtualizado.setFase(Integer.parseInt(JOptionPane.showInputDialog("Digite o fase do aluno")));
+                        listasimples.set(posicaoAtualizar, novoAtualizado);
+                        System.out.println("Aluno atualizado");
+                    } else {
+                        System.out.println("Id de Aluno não encontrado");
+                    }
                     break;
                 case 4:
-                    int idApagar =  Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser apagado"));
+                    int idApagar = Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser apagado"));
                     int posicaoExcluir = -1;
-                    for(int i = 0; i<listasimples.size();i++){
-                        if(listasimples.get(i).getId() == idApagar){
+                    for (int i = 0; i < listasimples.size(); i++) {
+                        if (listasimples.get(i).getId() == idApagar) {
                             posicaoExcluir = i;
                         }
                     }
-                    if(posicaoExcluir != -1){
-                            listasimples.remove(posicaoExcluir);
-                    }
-                    else{
+                    if (posicaoExcluir != -1) {
+                        listasimples.remove(posicaoExcluir);
+                    } else {
                         System.out.println("Id de Aluno não encontrado");
                     }
                     break;
@@ -65,8 +82,8 @@ public class Principal {
                     break;
                 case 6:
                     System.out.println("Listagem iniciada");
-                    for(int i = 0; i<listasimples.size();i++){
-                        System.out.println("i: "+i);
+                    for (int i = 0; i < listasimples.size(); i++) {
+                        System.out.println("i: " + i);
                         System.out.println(listasimples.get(i).toString());
                     }
                     break;
