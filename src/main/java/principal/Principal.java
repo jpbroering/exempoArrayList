@@ -30,11 +30,36 @@ public class Principal {
                     System.out.println("Aluno inserido");
                     break;
                 case 2:
-                    
+                    int idAConsulta =  Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser consultado"));
+                    int posicaoConsulta = -1;
+                    for(int i = 0; i<listasimples.size();i++){
+                        if(listasimples.get(i).getId() == idAConsulta){
+                            posicaoConsulta = i;
+                        }
+                    }
+                    if(posicaoConsulta != -1){
+                            System.out.println(listasimples.get(posicaoConsulta).toString());
+                    }
+                    else{
+                        System.out.println("Id de Aluno não encontrado");
+                    }
                     break;
                 case 3:
                     break;
                 case 4:
+                    int idApagar =  Integer.parseInt(JOptionPane.showInputDialog("Digite um Id de aluno a ser apagado"));
+                    int posicaoExcluir = -1;
+                    for(int i = 0; i<listasimples.size();i++){
+                        if(listasimples.get(i).getId() == idApagar){
+                            posicaoExcluir = i;
+                        }
+                    }
+                    if(posicaoExcluir != -1){
+                            listasimples.remove(posicaoExcluir);
+                    }
+                    else{
+                        System.out.println("Id de Aluno não encontrado");
+                    }
                     break;
                 case 5:
                     break;
@@ -42,12 +67,7 @@ public class Principal {
                     System.out.println("Listagem iniciada");
                     for(int i = 0; i<listasimples.size();i++){
                         System.out.println("i: "+i);
-                        System.out.println("id: "+listasimples.get(i).getId());
-                        System.out.println("Nome: "+listasimples.get(i).getNome());
-                        System.out.println("Idade: "+listasimples.get(i).getIdade());
-                        System.out.println("Curso: "+listasimples.get(i).getCurso());
-                        System.out.println("Fase: "+listasimples.get(i).getFase());
-                        
+                        System.out.println(listasimples.get(i).toString());
                     }
                     break;
                 case 9:
